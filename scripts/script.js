@@ -11,7 +11,7 @@ async function handleLogin(event) {
 
         if (isValid) {
             sessionStorage.setItem("isLoggedIn", true);
-            window.location.href = "pages/admin.html";  // Redirection vers admin.html
+            window.location.href = "admin.html";  // Redirection vers admin.html
         } else {
             alert("Nom d'utilisateur ou mot de passe incorrect !");
         }
