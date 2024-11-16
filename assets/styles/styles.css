@@ -1,18 +1,23 @@
-/* Base et reset */
+/* Général */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
 }
 
 body {
+    font-family: Arial, sans-serif;
     background-color: #121212;
-    color: #ffffff;
-    line-height: 1.6;
-    font-size: 16px;
-    margin: 0;
-    padding: 0;
+    color: #fff;
+}
+
+h1, p {
+    text-align: center;
+    color: #00ff99;
+}
+
+main {
+    margin-top: 80px;
 }
 
 /* Header */
@@ -29,6 +34,7 @@ header {
     z-index: 100;
 }
 
+/* Bouton Hamburger */
 .menu-toggle {
     cursor: pointer;
     display: flex;
@@ -45,6 +51,7 @@ header {
     transition: all 0.3s ease;
 }
 
+/* Menu caché par défaut */
 nav {
     display: flex;
 }
@@ -70,7 +77,6 @@ nav ul li a:hover {
     color: #ffffff;
 }
 
-/* Menu hamburger - caché par défaut */
 #menu {
     display: none;
     position: fixed;
@@ -92,10 +98,7 @@ nav ul li a:hover {
     text-align: center;
 }
 
-.hidden {
-    display: none;
-}
-
+/* Animation du menu hamburger */
 #menu-toggle.active .bar:nth-child(1) {
     transform: rotate(45deg);
     top: 8px;
@@ -110,50 +113,7 @@ nav ul li a:hover {
     top: -8px;
 }
 
-/* Animations */
-button, input {
-    transition: transform 0.3s ease;
-}
-
-button:hover, input:focus {
-    transform: scale(1.05);
-}
-
-/* Section À propos de MisterBot */
-#about {
-    background-color: #2a2a2a;
-    padding: 40px 20px;
-    text-align: center;
-    color: #ffffff;
-    margin-top: 50px;
-    border-radius: 10px;
-}
-
-#about h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #00ff99; /* Accent lumineux */
-}
-
-#about p {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-}
-
-#about ul {
-    list-style-type: none;
-    padding: 0;
-    margin-bottom: 30px;
-}
-
-#about ul li {
-    font-size: 1.1rem;
-    margin: 10px 0;
-}
-
-#about code {
-    background-color: #444444;
-    padding: 5px 10px;
-    border-radius: 5px;
-    color: #00ff99;
+/* Menu caché quand pas actif */
+.hidden {
+    display: none;
 }
