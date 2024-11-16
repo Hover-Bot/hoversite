@@ -1,4 +1,114 @@
-/* Section Hero */
+/* Base globale */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    line-height: 1.6;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header global */
+header {
+    background-color: #1f1f1f;
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    color: #00ff99;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #ffffff;
+}
+
+/* Section principale commune */
+main {
+    padding-top: 100px; /* Décalage pour le header fixe */
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Section spécifique : formulaire */
+form {
+    background-color: #333333;
+    padding: 30px;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin: 20px auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #222222;
+    border: 1px solid #444444;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #00ff99;
+    color: #121212;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #00cc7a;
+}
+
+/* Footer global */
+footer {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    font-size: 0.9rem;
+}
+
+/* Styles spécifiques */
 .hero {
     text-align: center;
     padding: 100px 20px;
@@ -16,7 +126,6 @@
     color: #ffffff;
 }
 
-/* Section Présentation */
 .presentation {
     padding: 50px 20px;
     background-color: #1f1f1f;
@@ -70,4 +179,26 @@
 .presentation .invite-btn:hover {
     background-color: #00cc7a;
     transform: translateY(-2px);
+}
+
+/* Admin page specific styles */
+.admin-section {
+    text-align: center;
+    padding: 50px;
+}
+
+.admin-section button {
+    background-color: #1f1f1f;
+    color: #00ff99;
+    border: 1px solid #00ff99;
+    font-size: 20px;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.admin-section button:hover {
+    background-color: #00ff99;
+    color: #121212;
+    border-color: #ffffff;
 }
