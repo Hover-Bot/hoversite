@@ -3,24 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion</title>
-    <link rel="stylesheet" href="assets/styles/styles.css">
+    <title>Connexion - MisterBot</title>
+    <link rel="stylesheet" href="../assets/styles/styles.css">
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="connexion.html">Se connecter</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
         <h2>Connexion</h2>
-        <form id="login-form">
+        <form onsubmit="handleLogin(event)">
             <label for="username">Nom d'utilisateur :</label>
-            <input type="text" id="username" required>
-            
+            <input type="text" id="username" name="username" required>
             <label for="password">Mot de passe :</label>
-            <input type="password" id="password" required>
-            
+            <input type="password" id="password" name="password" required>
             <button type="submit">Se connecter</button>
         </form>
     </main>
-    <!-- Scripts -->
-    <script src="../utils/auth.js"></script>
+    <footer>
+        <p>&copy; 2024 MisterBot. Tous droits réservés.</p>
+    </footer>
     <script src="../scripts/script.js" defer></script>
 </body>
 </html>
