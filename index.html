@@ -3,30 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MisterBot - Page Principale</title>
+    <title>Page d'Accueil</title>
     <link rel="stylesheet" href="assets/styles/styles.css">
 </head>
 <body>
     <header>
-        <div class="menu-toggle" id="menu-toggle">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-
-        <nav id="menu" class="hidden">
+        <nav>
             <ul>
-                <li><a href="index.html">Page principale</a></li>
                 <li><a href="pages/connexion.html">Se connecter</a></li>
             </ul>
         </nav>
     </header>
-
     <main>
-        <h1>Bienvenue sur MisterBot</h1>
-        <p>Votre bot Discord préféré !</p>
+        <section class="hero">
+            <h1>Bienvenue sur MisterBot</h1>
+            <p>Un bot Discord puissant, polyvalent et facile à utiliser.</p>
+        </section>
+        <section class="presentation">
+            <h2>Découvrez MisterBot</h2>
+            <div class="features">
+                <p>MisterBot est conçu pour rendre vos serveurs Discord plus dynamiques et organisés. Voici ce qu'il peut faire :</p>
+                <ul>
+                    <li>🔒 **Modération automatique** : Bannissez, mutez et gérez les utilisateurs problématiques.</li>
+                    <li>🎶 **Lecteur de musique** : Écoutez vos chansons préférées directement sur Discord.</li>
+                    <li>📊 **Statistiques avancées** : Suivez l'activité de vos membres.</li>
+                    <li>⚙️ **Personnalisation complète** : Configurez MisterBot selon vos besoins.</li>
+                </ul>
+            </div>
+            <a href="https://discord.com/oauth2/authorize?client_id=VOTRE_CLIENT_ID&scope=bot&permissions=8" class="invite-btn">
+                🎉 Inviter MisterBot
+            </a>
+        </section>
     </main>
-
     <script src="scripts/script.js" defer></script>
 </body>
 </html>
