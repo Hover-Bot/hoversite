@@ -1,44 +1,53 @@
 // Script pour le menu hamburger
-document.getElementById('menu-toggle').addEventListener('click', function() {
-    // Bascule entre la classe 'active' pour le bouton hamburger
-    this.classList.toggle('active');
-
-    // Affiche ou cache le menu en ajoutant ou retirant la classe 'hidden'
+document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
-    menu.classList.toggle('hidden');
+
+    // Vérifie si le bouton et le menu existent
+    if (menuToggle && menu) {
+        menuToggle.addEventListener('click', function () {
+            // Ajoute ou retire la classe "hidden" pour afficher/masquer le menu
+            menu.classList.toggle('hidden');
+
+            // Ajoute une classe pour animer le bouton hamburger
+            menuToggle.classList.toggle('active');
+        });
+    } else {
+        console.error("Le bouton ou le menu n'a pas été trouvé.");
+    }
 });
 
-// Optionnel: Ajout d'une fonctionnalité pour gérer la connexion et le menu après la connexion
-
-// Si l'utilisateur est déjà connecté, changer le bouton de connexion pour l'icône de compte
-window.onload = function() {
+// Gestion de la connexion
+window.onload = function () {
     const isLoggedIn = localStorage.getItem('isLoggedIn'); // Vérifie si l'utilisateur est connecté
     const loginButton = document.getElementById('login-button');
 
-    if (isLoggedIn) {
-        // Si l'utilisateur est connecté, remplace le bouton par une icône de compte
-        loginButton.innerHTML = '<i class="fas fa-user"></i>';
-        loginButton.setAttribute('href', 'admin.html'); // Lien vers la page admin
-    } else {
-        // Sinon, garde le bouton de connexion classique
-        loginButton.innerHTML = 'Se connecter';
-        loginButton.setAttribute('href', 'pages/connexion.html'); // Lien vers la page de connexion
+    if (loginButton) {
+        if (isLoggedIn) {
+            // Si l'utilisateur est connecté, remplace le bouton par une icône de compte
+            loginButton.innerHTML = '<i class="fas fa-user"></i>';
+            loginButton.setAttribute('href', 'admin.html'); // Lien vers la page admin
+        } else {
+            // Sinon, garde le bouton de connexion classique
+            loginButton.innerHTML = 'Se connecter';
+            loginButton.setAttribute('href', 'pages/connexion.html'); // Lien vers la page de connexion
+        }
     }
 };
 
-// Fonction de connexion (ajoutée à titre d'exemple pour gérer l'authentification)
+// Fonction de connexion (appelée lors de la soumission du formulaire)
 function handleLogin(event) {
     event.preventDefault(); // Empêche le rechargement de la page
 
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    // Validation des identifiants (simplifiée)
+    // Validation des identifiants
     validateCredentials(username, password)
         .then(user => {
-            // Si les identifiants sont valides, on redirige vers la page d'accueil
+            // Si les identifiants sont valides
             localStorage.setItem('isLoggedIn', true); // Marque l'utilisateur comme connecté
-            window.location.href = 'index.html';
+            window.location.href = '../index.html'; // Redirige vers la page principale
         })
         .catch(error => {
             // Si une erreur se produit (mauvais identifiants)
@@ -50,8 +59,12 @@ function handleLogin(event) {
 // Fonction pour valider les identifiants (simplifiée pour l'exemple)
 function validateCredentials(username, password) {
     return new Promise((resolve, reject) => {
-        // Vous pouvez intégrer une logique de vérification ici (via un appel API, par exemple)
-        const users = JSON.parse(localStorage.getItem('users') || '[]');
+        // Vous pouvez intégrer une logique de vérification ici (via un appel API ou JSON local)
+        const users = [
+            { username: 'admin', password: '1234' },
+            { username: 'user', password: 'password' }
+        ];
+
         const user = users.find(u => u.username === username && u.password === password);
 
         if (user) {
@@ -62,8 +75,8 @@ function validateCredentials(username, password) {
     });
 }
 
-// Fonction de déconnexion (ajoutée si vous avez une page admin pour se déconnecter)
+// Fonction de déconnexion
 function handleLogout() {
-    localStorage.removeItem('isLoggedIn'); // Supprime la connexion
-    window.location.href = "index.html"; // Redirige vers la page d'accueil après déconnexion
+    localStorage.removeItem('isLoggedIn'); // Supprime l'état de connexion
+    window.location.href = "index.html"; // Redirige vers la page principale après déconnexion
 }
