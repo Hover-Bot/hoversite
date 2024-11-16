@@ -3,15 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page d'Accueil</title>
+    <title>Page d'Accueil - MisterBot</title>
     <link rel="stylesheet" href="assets/styles/styles.css">
-    <!-- Ajout de Google Font Roboto -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <nav>
+        <div class="menu-toggle" id="menu-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <nav id="menu" class="hidden">
             <ul>
+                <li><a href="index.html">Page principale</a></li>
                 <li><a href="pages/connexion.html">Se connecter</a></li>
             </ul>
         </nav>
@@ -22,12 +27,10 @@
         <p>Connectez-vous pour accéder à votre espace.</p>
     </main>
 
-    <!-- Section à propos de MisterBot -->
     <section id="about">
         <div class="container">
             <h2>À propos de MisterBot</h2>
             <p><strong>MisterBot</strong> est un bot Discord polyvalent conçu pour améliorer votre expérience sur les serveurs Discord. Que vous soyez un administrateur de serveur ou un utilisateur, MisterBot apporte une multitude de fonctionnalités utiles.</p>
-            
             <h3>Fonctionnalités principales :</h3>
             <ul>
                 <li><strong>Modération avancée :</strong> Gérez votre serveur avec des commandes de modération puissantes, telles que le ban, le kick et la gestion des rôles.</li>
@@ -35,7 +38,6 @@
                 <li><strong>Statistiques et informations :</strong> Accédez à des statistiques détaillées, comme le nombre d'utilisateurs et les activités récentes sur votre serveur.</li>
                 <li><strong>Jeux et divertissement :</strong> MisterBot peut lancer des jeux, des quizz et ajouter une touche de fun à vos discussions.</li>
             </ul>
-            
             <h3>Comment l'ajouter à votre serveur :</h3>
             <p>1. Visitez la page d'invitation de MisterBot.</p>
             <p>2. Sélectionnez votre serveur et autorisez le bot à rejoindre votre communauté.</p>
