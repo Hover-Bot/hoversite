@@ -1,9 +1,30 @@
 // Script pour le menu hamburger
 document.getElementById('menu-toggle').addEventListener('click', function() {
-    this.classList.toggle('active'); // Ajoute ou retire la classe 'active' au bouton hamburger
+    // Bascule entre la classe 'active' pour le bouton hamburger
+    this.classList.toggle('active');
+
+    // Affiche ou cache le menu en ajoutant ou retirant la classe 'hidden'
     const menu = document.getElementById('menu');
-    menu.classList.toggle('hidden'); // Affiche ou cache le menu
+    menu.classList.toggle('hidden');
 });
+
+// Optionnel: Ajout d'une fonctionnalité pour gérer la connexion et le menu après la connexion
+
+// Si l'utilisateur est déjà connecté, changer le bouton de connexion pour l'icône de compte
+window.onload = function() {
+    const isLoggedIn = localStorage.getItem('isLoggedIn'); // Vérifie si l'utilisateur est connecté
+    const loginButton = document.getElementById('login-button');
+
+    if (isLoggedIn) {
+        // Si l'utilisateur est connecté, remplace le bouton par une icône de compte
+        loginButton.innerHTML = '<i class="fas fa-user"></i>';
+        loginButton.setAttribute('href', 'admin.html'); // Lien vers la page admin
+    } else {
+        // Sinon, garde le bouton de connexion classique
+        loginButton.innerHTML = 'Se connecter';
+        loginButton.setAttribute('href', 'pages/connexion.html'); // Lien vers la page de connexion
+    }
+};
 
 // Fonction de connexion (ajoutée à titre d'exemple pour gérer l'authentification)
 function handleLogin(event) {
@@ -16,6 +37,7 @@ function handleLogin(event) {
     validateCredentials(username, password)
         .then(user => {
             // Si les identifiants sont valides, on redirige vers la page d'accueil
+            localStorage.setItem('isLoggedIn', true); // Marque l'utilisateur comme connecté
             window.location.href = 'index.html';
         })
         .catch(error => {
@@ -40,11 +62,8 @@ function validateCredentials(username, password) {
     });
 }
 
-// Logique de déconnexion (à ajouter si nécessaire)
+// Fonction de déconnexion (ajoutée si vous avez une page admin pour se déconnecter)
 function handleLogout() {
-    // Ici, vous pouvez supprimer l'utilisateur de la session ou faire une redirection
-    alert("Vous êtes maintenant déconnecté.");
+    localStorage.removeItem('isLoggedIn'); // Supprime la connexion
     window.location.href = "index.html"; // Redirige vers la page d'accueil après déconnexion
 }
-
-// Vous pouvez ajouter d'autres fonctionnalités ici si nécessaire.
