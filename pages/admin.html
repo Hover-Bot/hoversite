@@ -3,15 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenue Admin</title>
-    <link rel="stylesheet" href="assets/styles/styles.css">
+    <title>Bienvenue Admin - MisterBot</title>
+    <link rel="stylesheet" href="../assets/styles/styles.css">
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Accueil</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
-        <h1>Bienvenue, Admin</h1>
-        <p>Vous êtes connecté. Vous pouvez maintenant accéder à votre tableau de bord.</p>
-        <button onclick="window.location.href = '../index.html'">Retour à la page principale</button>
+        <section class="admin-section">
+            <h2>Bienvenue Admin</h2>
+            <button onclick="logout()">Se déconnecter</button>
+        </section>
     </main>
+    <footer>
+        <p>&copy; 2024 MisterBot. Tous droits réservés.</p>
+    </footer>
     <script src="../scripts/script.js" defer></script>
 </body>
 </html>
