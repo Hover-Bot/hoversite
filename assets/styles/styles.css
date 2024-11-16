@@ -1,140 +1,38 @@
-/* Base et reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
-
-body {
-    background-color: #121212;
-    color: #ffffff;
-    line-height: 1.6;
-    font-size: 16px;
-    margin: 0;
-    padding: 0;
-}
-
-h1, h2 {
-    font-family: 'Roboto', sans-serif;
-    color: #00ff99; /* Accents lumineux */
-}
-
-/* Header */
-header {
-    background-color: #1f1f1f;
-    padding: 20px 0;
+/* Section À propos de MisterBot */
+#about {
+    background-color: #2a2a2a;
+    padding: 40px 20px;
     text-align: center;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 100;
-}
-
-header nav ul {
-    list-style-type: none;
-}
-
-header nav ul li {
-    display: inline;
-    margin: 0 20px;
-}
-
-header nav ul li a {
-    color: #00ff99;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-header nav ul li a:hover {
     color: #ffffff;
-}
-
-/* Section principale */
-main {
-    padding-top: 100px; /* Décalage pour le header fixe */
-    text-align: center;
-    margin-top: 100px;
-}
-
-/* Formulaire de connexion */
-form {
-    background-color: #333333;
-    padding: 30px;
+    margin-top: 50px;
     border-radius: 10px;
-    display: inline-block;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-label {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 18px;
-}
-
-input {
-    width: 100%;
-    padding: 10px;
+#about h2 {
+    font-size: 2rem;
     margin-bottom: 20px;
-    background-color: #222222;
-    border: 1px solid #444444;
+    color: #00ff99; /* Accent lumineux */
+}
+
+#about p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+#about ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+#about ul li {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+#about code {
+    background-color: #444444;
+    padding: 5px 10px;
     border-radius: 5px;
-    color: #ffffff;
-}
-
-input[type="text"], input[type="password"] {
-    font-size: 16px;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #00ff99;
-    color: #121212;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #00cc7a;
-}
-
-/* Animations */
-button, input {
-    transition: transform 0.3s ease;
-}
-
-button:hover, input:focus {
-    transform: scale(1.05);
-}
-
-/* Admin page styles */
-button {
-    background-color: #1f1f1f;
     color: #00ff99;
-    border: 1px solid #00ff99;
-    font-size: 20px;
-    padding: 15px 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-button:hover {
-    background-color: #00ff99;
-    color: #121212;
-    border-color: #ffffff;
-}
-
-/* Animation for page transitions */
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-body {
-    animation: fadeIn 0.5s ease-in-out;
 }
